@@ -1,0 +1,28 @@
+##############################
+#
+# Thank you for use my theme!
+#
+# cybertramp(paran_son@outlook.com)
+#
+# Theme name is SSO(Simple Site :O)
+# 
+##############################
+
+theme: "sso"        # If you want to use then do not erase this field!
+
+##############################
+# defaults
+##############################
+
+about: true         # show menubar menu item (about page)
+categories: true    # show menubar menu item (categories page)
+tags: true          # show menubar menu item (tags page)
+
+##############################
+# custom config for theme
+##############################
+footer:
+  author_site: 'https://cybertramp.net' # footer - your profile url link
+  site_year_range: ['2023', '2024']     # footer - your site copyright years range
+
+  

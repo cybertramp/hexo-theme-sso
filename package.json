@@ -1,0 +1,12 @@
+{
+  "name": "hexo-theme-sso",
+  "version": "1.0.0",
+  "description": "Hexo Theme SSO",
+  "repository": "hexojs/hexo-theme-sso",
+  "keywords": [
+    "hexo",
+    "theme",
+    "sso"
+  ],
+  "license": "MIT"
+}

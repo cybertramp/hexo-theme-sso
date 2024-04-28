@@ -1,0 +1,76 @@
+<h1 id="article-title">
+  <%- page.title || page.slug.split("/")[page.slug.split("/").length-1] %>
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+  <% if (theme.valine && theme.valine.enableCounter){ %>
+  <span>
+    Visitors:<span id="<%= url_for(page.path) %>" class="leancloud_visitors" data-flag-title="<%- page.title %>"></span>
+  </span>
+  <% } %>
+
+  <span><%- config.author %></span>
+  <span><%- date(page.date, "YYYY-MM-DD HH:mm:ss" ) %></span>
+
+  <div id="article-categories">
+    <% if (page.categories) { %>
+    <span>Categories：</span>
+    <% for (var j=0; j < page.categories.data.length; j++) { %>
+    <% if (page.categories.data[j] && page.categories.data[j].name) { %>
+    <span>
+      <i class="fa fa-folder" aria-hidden="true">
+        <a href="/<%- page.categories.data[j].path %>"><%- page.categories.data[j].name %></a>
+      </i>
+      <% if (j < page.categories.data.length - 1) { %>
+      >
+      <% } %>
+    </span>
+    <% } %>
+    <% } %>
+    <% } %>
+
+    <% if (page.tags) { %>
+    <span>Tags：</span>
+    <% for (var j=0; j < page.tags.data.length; j++) { %>
+    <% if (page.tags.data[j] && page.tags.data[j].name) { %>
+    <span>
+      <i class="fa fa-tag" aria-hidden="true">
+        <a href="/<%- page.tags.data[j].path %>"><%- page.tags.data[j].name %></a>
+      </i>
+    </span>
+    <% } %>
+    <% } %>
+    <% } %>
+  </div>
+
+</div>
+
+
+<!-- content -->
+<div id="article-content">
+  <%- page.content %>
+</div>
+
+
+<!-- post-guide -->
+<% if (is_post()){ %>
+<div class="post-guide">
+  <div class="item left">
+    <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+      <%- page.prev.title || page.prev.slug.split("/")[page.prev.slug.split("/").length-1] %>
+    </a>
+    <% } %>
+  </div>
+  <div class="item right">
+    <% if (page.next){ %>
+    <a href="<%- url_for(page.next.path) %>">
+      <%- page.next.title || page.next.slug.split("/")[page.prev.slug.split("/").length-1] %>
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
+    <% } %>
+  </div>
+</div>
+<% } %>
