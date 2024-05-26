@@ -388,3 +388,21 @@ table td {
         opacity: 0.95;
     }
 }
+
+.no-link {
+    color: inherit;
+    /* 텍스트 색상 상속 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+}
+
+.no-link:hover,
+.no-link:focus,
+.no-link:active {
+    color: inherit;
+    /* 호버, 포커스, 액티브 상태에서도 텍스트 색상 상속 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    outline: none;
+    /* 포커스 시 윤곽선 제거 */
+}

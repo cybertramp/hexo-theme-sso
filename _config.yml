@@ -15,6 +15,7 @@ theme: "sso"        # If you want to use then do not erase this field!
 ##############################
 
 about: true         # show menubar menu item (about page)
+now: true           # show menubar menu item (now page)
 categories: true    # show menubar menu item (categories page)
 tags: true          # show menubar menu item (tags page)
 

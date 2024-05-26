@@ -3,5 +3,37 @@
   Categories
 </h1>
 <h3>
-  Categories: <%- site.categories.length %>
+  There are <%- site.categories.length %> categories.
 </h3>
+<div id="article-content">
+  <% if (site.categories && site.categories.length) { %>
+    <% site.categories.forEach(category=> { %>
+      <a class="no-link" href="<%= config.root + category.path %>">
+        <%= category.name %>
+      </a>
+      <% }); %>
+        <hr style="border-top: 2px solid #ddd; padding-bottom: 10px;">
+        <ul>
+          <% site.categories.forEach(category=> { %>
+            <li class="menu-item">
+              <span>
+                <a class="no-link" href="<%= config.root + category.path %>">
+                  <%= category.name %> (<%= category.posts.length %>)
+                </a>
+              </span>
+              <ul>
+                <% category.posts.data.sort((a, b)=> new Date(b.date) - new Date(a.date)).forEach(post => {
+                  %>
+                  <li>
+                    <a class="no-link" href="<%= url_for(post.path) %>">
+                      <%= date(post.date, "YYYY.MM.DD" ) %> -
+                        <%= post.title || post.slug.split("/").pop() %>
+                    </a>
+                  </li>
+                  <% }); %>
+              </ul>
+            </li>
+            <% }); %>
+        </ul>
+        <% } %>
+</div>
