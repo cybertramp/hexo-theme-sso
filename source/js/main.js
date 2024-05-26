@@ -7,8 +7,7 @@ $(document).ready(function () {
 });
 
 function scrollGoTop() {
-  console.log("[DBG] load scroll to top");
-  $("#go-top-toggle").on("click", function (e) {
+  $("#go-top-toggle-feat").on("click", function (e) {
     $("html").animate({ scrollTop: 0 }, 200);
   });
 }

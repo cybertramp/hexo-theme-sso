@@ -406,3 +406,25 @@ table td {
     outline: none;
     /* 포커스 시 윤곽선 제거 */
 }
+
+/* to top toggle */
+
+.go-top-toggle {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    border: none;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.go-top-toggle:hover {
+    opacity: 1;
+}
